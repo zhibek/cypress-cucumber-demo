@@ -7,13 +7,11 @@ Given('I am on the Google homepage', () => {
   cy.visit(url)
 })
 
-When(`I search for "demo"`, () => {
-  const text = "demo"
-  cy.get('#searchform input[type=text]').type(text).type('{enter}')
-  //cy.get('#searchform input[type=submit]:first-of-type').click()
+When(`I search for {string}`, (text) => {
+  cy.get('#searchform input[type=text]').type(text)
+  cy.get('#searchform input[type=submit]:first-of-type').first().click()
 })
 
-Then(`I check the first search result`, () => {
-  cy.get('#search > div:first-of-type > div:first-of-type > div:first-of-type > div:first-of-type > div:first-of-type > div:first-of-type > div:first-of-type > a:first-of-type').should('have.attr', 'href', 'https://en.wikipedia.org/wiki/Demo')
-
+Then(`I check the first search result has URL {string}`, (url) => {
+  cy.get('#search a:first-of-type').first().should('have.attr', 'href', url)
 })
