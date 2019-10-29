@@ -20,6 +20,7 @@ jobs:
           key: v1-deps-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - ~/.cache
+      - run: yarn lint
       - run: yarn test
       - store_artifacts:
           path: ~/app/build
