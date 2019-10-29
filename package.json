@@ -1,0 +1,14 @@
+{
+  "name": "cypress-cucumber-demo",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "lint": "eslint cypress",
+    "test": "cypress run --spec **/*.feature"
+  },
+  "devDependencies": {
+    "cypress": "^3.5.0",
+    "cypress-cucumber-preprocessor": "^1.16.2",
+    "eslint": "^6.6.0"
+  }
+}
