@@ -21,3 +21,5 @@ jobs:
           paths:
             - ~/.cache
       - run: yarn test
+      - store_artifacts:
+          path: ~/app/build
